@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilols.css">
+    <title>Login</title>
+</head>
+<body>
+    <section style="background-image: url('Imagenes/mujer.svg'); font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 100%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;">
+    <!--esta seccion de css es para el responsive para que se adapte a varios dispositivos-->
+        <h2 style="color:white;">Login</h2>
+        <form id="loginForm" >
+            <label></label>
+            <input type="text" placeholder="usuario" id="username" required style="padding: 15px;" autofocus>
+            <label></label>
+            <input type="password" placeholder="contraseña" id="password" style="padding: 15px;"required>
+            <input type="submit" value="Ingresar" style="color: black; padding: 15px;">
+            <a href="/">
+                <input type="button" value="Regresar" style="color: black;">
+            </a>
+            <br>
+        </form>
+        <span class="notaForm">
+        <p>No tienes una cuenta? <a href="register">Registro</a></p>
+        </span>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/client.js"></script>
+</body>
+</html>

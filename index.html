@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo/logo.png" type="imagenes/logo4g">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>G4-Cosmeticos</title>
+</head>
+
+<body>
+
+    <header id="hnavbar">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-body">
+            <div class="container-fluid">
+               <button
+                  data-mdb-collapse-init
+                  class="navbar-toggler"
+                  type="button"
+                  data-mdb-target="#navbarExample01"
+                  aria-controls="navbarExample01"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+               <i class="fas fa-bars"></i>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarExample01">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <!-- Aquí le damos el diseño a los botones del navbar -->
+                     <!-- <li class="nav-item active">                  
+                        <a class="nav-link" aria-current="page" href="#Inicio"  >
+                        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1;" id="Inicio">Inicio</button></a>
+                     </li> -->
+                     <!-- Aquí le damos el diseño a los botones del navbar -->
+                     <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="#loginForm" >
+                        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1;">Contacto</button></a>
+                        <!-- Aquí le damos el diseño a los botones del navbar -->
+                     <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="#Ofertas" >
+                        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1;">Ofertas</button></a>
+                     </li>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#Productos">
+                        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1;">Productos</button></a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="nosotros">
+                        <button data-mdb-ripple-init type="submit" href="nosotros" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1;">Nosotros</button></a>
+                     </li>
+                  </ul>
+                  <!-- Aquí le damos el diseño a al boton para iniciar sesion-->
+                  <a class="nav-link" href="login">
+                  <button data-mdb-ripple-init type="submit" href="login" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1;" id="btnInicioSesion">Iniciar Sesion</button>
+                  </a>
+                  <a class="nav-link" href="#">
+                  <button data-mdb-ripple-init type="submit" href="/" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1; display: none;" id="logout">Cerrar Sesion</button>
+                  </a>
+                  <a class="nav-link" href="#">
+                  <button data-mdb-ripple-init type="submit" href="/" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1; display: none;" id="carShopping"><span><i class="fas fa-cart-shopping"></i></span>
+                    <span class="badge rounded-pill badge-notification bg-danger " id="contadorProductos"></span></button>
+                  </a>
+
+                  <a class="nav-link" href="#">
+                     <button data-mdb-ripple-init type="submit" href="/" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1; display: none;" id="updateUserBtn"><span><i class="fas fa-square-pen"></i></span>
+                       </button>
+                  </a>
+                  
+               </div>
+            </div>
+         </nav>
+         <!-- Navbar -->
+    </header>
+
+    <section>
+        <div class="row">
+
+            <!---seccion de carrusel-->
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" style="height: 300px !important; padding-top: 100px !important;">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="Imagenes/logobanner.jpg"  style="width: 200px;height:300px; box-shadow: 5px 5px  8px  #fdcae1;" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="Imagenes/natural.jpg"  style="width: 200px;height:300px; box-shadow: 5px 5px  8px  #fdcae1;" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/virtual.jpg"  style="width: 200px;height:300px; box-shadow: 5px 5px  8px  #fdcae1;" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" style="color: black;"  aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" style="color: black;"  aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+            
+        </div>
+        
+          
+          <br><br><br><br>
+        <!--sección de cards-->
+<div class="container" id="Productos">
+          <div class="row">
+            <div class="col">
+               <div class="img-fluid"style="width: -10rem;margin-top:10px;" > <!--se calcula en porcentaje para la parte responsive y ocupe todo el espacio-->
+                  <img src="imagenes/CARD.svg"style="width:100%;width: 200px;height:300px; box-shadow: 5px 5px 8px  #fdcae1" class="rounded mx-auto d-block" alt="">      
+               </div>
+            </div>
+         
+            
+               <div class="col">
+               <div class="img-fluid"style="width: 10rem;  margin-top:10px;width: 100%;" >
+                  <img src="imagenes/BROCHAS Y ACCESORIOS.svg"  style="width: 200px;height:300px; box-shadow: 5px 5px  8px  #fdcae1;" class="mx-auto d-block" alt="">
+               </div>
+            </div>
+
+            <div class="col" >
+               <div class="img-fluid"style="width: 10rem;  margin-top:10px;width: 100%;" >
+                  <img src="imagenes/CUIDADO PIEL.svg" style="width: 200px;height: 300px; box-shadow: 5px 5px  8px  #fdcae1;" class="rounded mx-auto d-block" alt="Sunset Over the Sea">
+               </div>
+            </div>
+           <!--el rem se calcula como porcentaje para el ancho de las columnas para el responsive-->
+            <div class="col" >
+               <div class="img-fluid"style="width: -10rem; margin-top:10px;" >
+                  <img src="imagenes/LABIOS.svg"style="width:200px;height: 300px; box-shadow: 5px 5px  8px  #fdcae1;" class="rounded mx-auto d-block" alt="Sunset Over the Sea">
+               </div>
+            </div>
+         </div>
+           
+    <div class="row">
+                <div class="col">
+                    <h1 class="titulo">Looks de maquillaje</h1>
+                    <p class="parrafo">Logra un maquillaje paso a paso de larga duración</p>
+                    <img src="Imagenes/base maqui.jpg" class="img-fluid" alt="Wild Landscape" />
+                </div>
+            </div>
+
+            <div class="row">
+               <div class="col">                 
+               <a target="_blank" class="btn btn-primary btn-lg btn-block"  style="background-color: rgb(239, 6, 165); border-radius: solid 9px; margin-top: 50px;"href="https://www.youtube.com/watch?v=AEoEhJx7Q8w" >Rutina de belleza
+               </a>
+
+               </div>    
+           </div>
+
+                      <!--seccion de carrusel-->
+                      <div class="container mt-5">
+                        <h1 class="text-center mb-4" id="Ofertas">Tienda </h1>
+                        <div id="productosCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Primer elemento del carrusel -->
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="Imagenes/labiales1.jpg" class="card-img-top" style="width: 200px; height: 220px;" alt="Base de larga duración">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Labial infinit</h5>
+                                                    <p class="card-text">25.000</p>
+                                                    <button type="button" style="border-radius:5px" class="btn btn-dark btn-rounded" data-producto="Base de larga duración 1" data-valor="25000">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="Imagenes/polvos1.jpg" class="card-img-top" style="width: 200px; height: 220px;" alt="Polvos compactos">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Polvos compactos</h5>
+                                                    <p class="card-text">30.000</p>
+                                                    <button type="button" style="border-radius:5px" class="btn btn-dark btn-rounded" data-producto="Polvos compactos" data-valor="30000">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="Imagenes/basemac1.jpg" class="card-img-top" style="width: 200px; height: 220px;" alt="Base de larga duración">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Base liquida perfect</h5>
+                                                    <p class="card-text">25.000</p>
+                                                    <button type="button" style="border-radius:5px" class="btn btn-dark btn-rounded" data-producto="Base de larga duración 2" data-valor="25000">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Segundo elemento del carrusel -->
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="Imagenes/sombras1.jpg" class="card-img-top" style="width: 200px; height: 220px;" alt="Polvos compactos">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Sombra de ojos Impact</h5>
+                                                    <p class="card-text">30.000</p>
+                                                    <button type="button" style="border-radius:5px" class="btn btn-dark btn-rounded" data-producto="Polvos compactos 2" data-valor="30000">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="Imagenes/brochas1.jpg" class="card-img-top" style="width: 200px; height: 220px;" alt="Base de larga duración">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Brochas Delux</h5>
+                                                    <p class="card-text">25.000</p>
+                                                    <button type="button" style="border-radius:5px" class="btn btn-dark btn-rounded" data-producto="Base de larga duración 3" data-valor="25000">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="Imagenes/cejas1.jpg" class="card-img-top" style="width: 200px; height: 220px;" alt="Polvos compactos">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Cejas perfectas</h5>
+                                                    <p class="card-text">30.000</p>
+                                                    <button type="button" style="border-radius:5px" class="btn btn-dark btn-rounded" data-producto="Polvos compactos 3" data-valor="30000">Comprar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Controles del carrusel -->
+                            <a class="carousel-control-prev" href="#productosCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" style="color: black;" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#productosCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" style="color: black;"  aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>    
+            </div><br><br><br>
+
+           <!--seccion del formulario,igualmente se calcula en porcentaje para el responsive--> 
+
+            
+           <div class="container text-center">
+            <hr>
+
+            <h1 style="text-align:center; color: rgb(239, 6, 165);" >Tu opinión es muy importante. Te responderemos muy pronto</h1>
+            
+            <br>
+            <br>
+
+
+            <div class="row">
+              <div class="col">
+                <h2 class="text-center mb-4." >Formulario de contacto</h2>
+                <br>
+                <br>
+                <br>
+                <form style="width: 26rem; height: 24rem;" action="https://formspree.io/f/xzbnkkdl" method="POST" id="loginForm">
+                        <!-- Name input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="text" name="Nombre" id="form4Example1" class="form-control" />
+                        <label class="form-label" for="form4Example1">Nombre completo</label>
+                        </div>
+                        <!-- Name input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="tel" name="Celular" id="form4Example4" class="form-control" />
+                        <label class="form-label" for="form4Example4">Celular</label>
+                        </div>
+                        <!-- Email input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="email" name="Correo" id="form4Example2" class="form-control" />
+                        <label class="form-label" for="form4Example2">Correo electrónico</label>
+                        </div>
+                        <!-- Message input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                        <textarea class="form-control" name="Mensaje" id="form4Example3" rows="4"></textarea>
+                        <label class="form-label"  for="form4Example3">Mensaje</label>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="form-check d-flex justify-content-center mb-4" >
+                        <input
+                            class="form-check-input me-2"
+                            type="checkbox"
+                            value=""
+                            id="form4Example5"
+                            checked
+                            />
+                        <label class="form-check-label"style="" for="form4Example5">
+                        Enviame una copia de este mensaje
+                        </label>
+                        </div>
+                        <!-- Submit button -->
+                        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4" style="background-color:  #fdcae1; margin-top: -30px; z-index:1">Enviar</button>
+                    </form>
+
+              </div>
+              
+              <div class="col">
+                <h2 class="text-center mb-4">Testimonios</h2>
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-center">
+                                <div class="card testimonial-card" style="width: 28rem;">
+                                    <img src="imagenes/testimonio1.png" class="testimonial-image" alt="Foto de Juanita perez">
+                                    <div class="card-body">
+                                        <p class="card-text">"Excelente servicio y atención. ¡Muy recomendable!"</p>
+                                        <h5 class="card-title">Juanita Perez</h5>
+                                        <p class="card-subtitle mb-2 text-muted">CEO, Empresa XYZ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <div class="card testimonial-card" style="width: 28rem;">
+                                    <img src="imagenes/testimonio2.png" class="testimonial-image" alt="Foto de María López">
+                                    <div class="card-body">
+                                        <p class="card-text">"Los productos son de muy alta calidad. muy cumplidos en la entrega."</p>
+                                        <h5 class="card-title">María López</h5>
+                                        <p class="card-subtitle mb-2 text-muted">Directora, Compañía ABC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <div class="card testimonial-card" style="width: 28rem;">
+                                    <img src="imagenes/testimonio3.png" class="testimonial-image" alt="Foto de Carlos Ruiz">
+                                    <div class="card-body">
+                                        <p class="card-text">"El mejor servicio al cliente que he experimentado. los productos 100% naturales ¡Muchas gracias!"</p>
+                                        <h5 class="card-title">Jessica Hernandez</h5>
+                                        <p class="card-subtitle mb-2 text-muted">Gerente, Corporación 123</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            </div>
+        
+            </div>
+        
+              </div>
+            </div>
+          </div>
+
+           <div class="row" >
+                
+
+                <br>
+                <br>
+
+
+               
+                <div >
+                
+                   
+                </div>    
+
+                <a href="https://wa.me/1234567890" target="_blank">
+                    <img src="imagenes/whatssap.jpg" class="boton-flotante" alt="Botón de WhatsApp">
+                </a>
+              
+            </div>      
+   
+        
+
+    </section>
+
+    <footer class="bg-body-tertiary text-center"  style="width: 100%;position: absolute; margin-top: 100px;"  >
+
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+               <!-- Facebook -->
+               <a
+                  data-mdb-ripple-init
+                  class="btn text-white btn-floating m-1"
+                  style="background-color: #3b5998;"
+                  href="https://www.facebook.com/Yanbal.CO/?locale=es_LA"
+                  role="button"
+                  ><i class="fab fa-facebook-f"></i
+                  ></a>
+               <!-- Google -->
+               <a
+                  data-mdb-ripple-init
+                  class="btn text-white btn-floating m-1"
+                  style="background-color: #dd4b39;"
+                  href="https://www.holycosmetics.com.co/"
+                  role="button"
+                  ><i class="fab fa-google"></i
+                  ></a>
+               <!-- Instagram -->
+               <a
+                  data-mdb-ripple-init
+                  class="btn text-white btn-floating m-1"
+                  style="background-color: #fdcae1;"
+                  href="https://www.instagram.com/voguecosmeticos/?hl=es"
+                  role="button"
+                  ><i class="fab fa-instagram"></i
+                  ></a>
+            </section>
+            <!-- Section: Social media -->
+         </div>
+
+    </footer>
+    <script src="js/index2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
